@@ -1,38 +1,15 @@
-import React, {useEffect, useState} from "react";
-import axios from "axios";
+import React from "react";
 
-import {getAllProducts} from '../../../app/api/contacts'
-
-export function Comment({ className }) {
- const [product, setProduct] = useState([])
-const getProductData = async ()=>{
-  try{
-  // const data=  await axios.get("https://movieapp-server.herokuapp.com/users");
-  const data=  await axios.get("https://jsonplaceholder.typicode.com/posts");
-  console.log(data)
-  setProduct(data.data)
-  }
-  catch(e){
-    console.log(e)
-  }
-}
-
-useEffect(()=>{
-  getProductData()
-},[]);
+export function AddCategory({ className }) {
+ 
 
   return (
-       <>
-
-{product.map((item)=>{
-return <h1>{item.title}</h1>
-})}
-
+    <>
     <div className="container">
       <div className="card card-custom gutter-b">
         <div className="card-header">
           <div className="card-title">
-            <h3 className="card-label">Comment Lists</h3>
+            <h3 className="card-label">Add Category Lists</h3>
           </div>
           <div className="card-toolbar">
             {/* <button type="button" className="btn btn-primary">
@@ -57,7 +34,7 @@ return <h1>{item.title}</h1>
                 <label >
                   <b>Show:</b> 
                 </label>
-                <input type="checkBox"/>
+                <input type="number"/>
                 <label><b>entries</b></label>
               </div>
               {/* <label for="fname">Search:</label>
@@ -344,7 +321,7 @@ return <h1>{item.title}</h1>
                     aria-label="Type sortable"
                     className="sortable"
                   >
-                    Comment
+                    AddCategory
                     <span className="svg-icon svg-icon-sm svg-icon-primary ml-1 svg-icon-sort">
                       <svg
                         width="24px"
